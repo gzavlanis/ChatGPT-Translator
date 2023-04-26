@@ -1,5 +1,9 @@
 import openai
 import streamlit as st
+from PIL import Image
+
+# image
+image = Image.open('nn.png')
 
 # model angine AND openai api key
 model_engine = "text-davinci-003"
@@ -13,9 +17,13 @@ def translate_text(text, target_language):
     return translated_text
 
 def main():
+
+    # building the frontend
     st.sidebar.header('Language Translation App')
-    st.sidebar.write('Enter text to translate and select the target language')
-    st.sidebar.write('Powered by ChatGPT')
+    st.sidebar.write('A simple translation app that uses chatGPT api to translate text')
+    st.sidebar.write('[About GPT Models](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer)')
+    st.sidebar.write('Powered by [OpenAI](https://openai.com)')
+    st.image(image)
     text_input = st.text_input('Enter text you want to translate')
     target_language = st.selectbox('Select language of translation', ['Greek', 'English', 'French', 'Spanish', 'German'])
     translate_button = st.button('Translate text')
