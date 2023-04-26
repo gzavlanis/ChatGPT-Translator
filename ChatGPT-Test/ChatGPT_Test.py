@@ -24,7 +24,7 @@ def main():
     st.sidebar.write('[About GPT Models](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer)')
     st.sidebar.write('Powered by [OpenAI](https://openai.com)')
     st.image(image)
-    text_input = st.text_input('Enter text you want to translate')
+    text_input = st.text_input('Enter the text you want to translate')
     target_language = st.selectbox('Select language of translation', ['Greek', 'English', 'French', 'Spanish', 'German'])
     translate_button = st.button('Translate text')
     translated_text = st.empty()
