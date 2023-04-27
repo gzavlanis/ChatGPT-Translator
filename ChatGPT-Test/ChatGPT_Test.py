@@ -9,7 +9,6 @@ image = Image.open('nn.png')
 
 # model angine AND openai api key
 model_engine = "text-davinci-003"
-openai.api_key = "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"
 
 # function to handle the translation
 def translate_text_simple(text, target_language):
@@ -29,6 +28,7 @@ def main():
     st.sidebar.header('Language Translation App')
     st.sidebar.write('A simple translation app that uses chatGPT api to translate text')
     st.sidebar.write('[About GPT Models](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer)')
+    openai.api_key = st.sidebar.text_input('Enter your OpenAI API key', key = "str")
     st.sidebar.write('Powered by [OpenAI](https://openai.com)')
     st.image(image)
     text_input = st.text_input('Enter the text you want to translate')
