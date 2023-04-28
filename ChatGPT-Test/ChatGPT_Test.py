@@ -13,14 +13,15 @@ model_engine = "text-davinci-003"
 # function to handle the translation
 def translate_text_simple(text, target_language):
     prompt = f"Translate '{text}' to {target_language}" # define the prompt for ChatGPT model
-    response = openai.Completion.create(engine = model_engine, prompt = prompt, max_tokens = 1024, n = 0.7, stop = None, temperature = 1.0) # generate translation
+    response = openai.Completion.create(engine = model_engine, prompt = prompt, max_tokens = 1024, n = 1, stop = None, temperature = 0.7) # generate translation
     translated_text = response.choices[0].text.strip() # extract translation
     return translated_text
 
 def translate_text_specific(text, target_language, text_type):
     prompt = f"Translate '{text}' to {target_language}. The text to be translated is a {text_type}"
-    response = openai.Completion.create(engine = model_engine, prompt = prompt, max_tokens = 1024, n = 0.7, stop = None, temperature = 1.0) # generate translation
+    response = openai.Completion.create(engine = model_engine, prompt = prompt, max_tokens = 1024, n = 1, stop = None, temperature = 0.7) # generate translation
     translated_text = response.choices[0].text.strip() # extract translation
+    return translated_text
 
 def main():
 
