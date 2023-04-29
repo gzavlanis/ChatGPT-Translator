@@ -39,7 +39,7 @@ def main():
     openai.api_key = st.sidebar.text_input('Enter your OpenAI API key', key = "str") # user must enter openAI API key
     if st.sidebar.button("Refresh page"):
         st.cache_resource.clear()
-    st.sidebar.write('Powered by [OpenAI](https://openai.com)')
+    st.sidebar.write('Powered by [OpenAI](https://openai.com) and [Streamlit](https://streamlit.io)')
     st.image(image)
     text_input = st.text_input('Enter the text you want to translate')
     target_language = st.selectbox('Select language of translation', ['Greek', 'English', 'French', 'Spanish', 'German'])
